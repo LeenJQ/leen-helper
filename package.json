@@ -1,0 +1,11 @@
+{
+  "name": "leen-helper",
+  "version": "0.0.7",
+  "description": "开发自己的帮助函数库，不依赖第三方库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "leenjq2017 <13840918032@163.com>",
+  "license": "ISC"
+}
