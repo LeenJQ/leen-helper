@@ -1,11 +1,17 @@
 {
   "name": "leen-helper",
-  "version": "0.0.7",
+  "version": "0.0.29",
   "description": "开发自己的帮助函数库，不依赖第三方库",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "leenjq2017 <13840918032@163.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1"
+  }
 }

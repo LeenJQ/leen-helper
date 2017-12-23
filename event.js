@@ -8,6 +8,8 @@ function onResize(cb) {
   })(document, window); 
 }
 
+export {onResize}
+
 export default {
   onResize
 }
