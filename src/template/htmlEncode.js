@@ -1,5 +1,5 @@
 // HTML 字符串转译编码
-function htmlEncode (str) {
+export function htmlEncode (str) {
   if (str.length == 0 || typeof str !== 'string') { return '' }
   return str.replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
@@ -11,7 +11,7 @@ function htmlEncode (str) {
 }
 
 // HTML 字符串转译解码
-function htmlDecode (str) {
+export function htmlDecode (str) {
   if (str.length == 0 || typeof str !== 'string') { return '' }
   return str.replace(/&amp;/g, '&')
             .replace(/&lt;/g, '<')
@@ -20,4 +20,4 @@ function htmlDecode (str) {
             .replace(/&#39;/g, '\'')
             .replace(/&quot;/g, '\"')
             // .replace(/<br[\/]?>/g, '\n')    
-}
+} 
