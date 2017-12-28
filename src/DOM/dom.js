@@ -1,3 +1,13 @@
+// 获取 DOM 元素的 CSS 样式规则对象
+export const getElementStyleObj = function(element) {
+    return document.defaultView.getComputedStyle(element, null)
+}
+
+// 获取 DOM 元素原始类型
+export const getElementType = function(element) {
+    return Object.prototype.toString.call(element).slice(8, -1)
+}
+
 export default {
     /**
      * 获取光标在短连接输入框中的位置
