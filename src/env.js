@@ -13,6 +13,7 @@ export const isEdge = UA && UA.indexOf('edge/') > 0
 export const isAndroid = (UA && UA.indexOf('android') > 0) || (weexPlatform === 'android')
 export const isIOS = (UA && /iphone|ipad|ipod|ios/.test(UA)) || (weexPlatform === 'ios')
 export const isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge
+export const isRetina = window.devicePixelRatio && window.devicePixelRatio >= 2
 
 export function isNative (Ctor) {
   return typeof Ctor === 'function' && /native code/.test(Ctor.toString())
