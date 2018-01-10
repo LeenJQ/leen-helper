@@ -1,3 +1,5 @@
+// 抽离常用DOM 操作， 查询，创建，删除，关系等
+
 // 获取 DOM 元素的 CSS 样式规则对象
 export const getElementStyleObj = function(element) {
     return document.defaultView.getComputedStyle(element, null)

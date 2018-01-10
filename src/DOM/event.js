@@ -1,3 +1,5 @@
+// 封装DOM 事件， on
+
 function onResize(cb) {
   (function (doc, win) {
     var docEl = doc.documentElement,
