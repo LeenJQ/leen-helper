@@ -1,7 +1,43 @@
-const docElement = document.documentElement
-const docBody = document.body
-const viewPortWidth =  docElement.clientWidth  // viewport 视口
+// 页面全局对象
+export const docElement = document.documentElement
+export const docBody = document.body
+export const screen = window.screen
 
+/**
+ * 获取基本信息
+ * https://github.com/LeenJQ/leen-mobile/blob/master/Basic.md
+ * 
+ */
+// 获取 DPR （设备像素比) 
+export const getDPR = () => window.devicePixelRatio
+
+// 屏幕尺寸
+export const getScreenSize = ()=>{{ 
+    w: screen.width
+    h: screen.height
+}}
+
+// 获取窗口尺寸
+export const getWindowSize = ()=>{{
+    w: window.innerWidth
+    h: window.innerHeight
+}}
+
+// 获取滚动距离
+export const getScrollOffset = ()=>{{
+  x: window.pageXOffset
+  y: window.pageYOffset
+}}
+
+// 获取视图
+export const getViewPortSize = ()=>{{
+  w: docElement.clientWidth
+  h: docElement.clientHeight
+}} 
+
+/**
+ * DOM 属性函数
+ */
 // 获取 DOM 元素的 CSS 样式规则对象
 export const getElementStyleObj = function(element) {
   return document.defaultView.getComputedStyle(element, null)
@@ -10,52 +46,4 @@ export const getElementStyleObj = function(element) {
 // 获取 DOM 元素原始类型
 export const getElementType = function(element) {
   return Object.prototype.toString.call(element).slice(8, -1)
-}
-
-/**
- * 获取光标在短连接输入框中的位置
- * @param  {HTMLElementInput} elem 框DOM
- * @return {*}
- */
-export const getCursorPosition = function(elem){
-    if(navigator.userAgent.indexOf("MSIE") > -1) { // IE
-        var range = document.selection.createRange();
-        range.text = '';
-        range.setEndPoint('StartToStart',elem.createTextRange());
-        return range.text.length;
-    } else {
-        return elem.selectionStart;
-    }
-}
-
- /*
- * 设置输入域(input/textarea)光标的位置
- * @param {HTMLInputElement/HTMLTextAreaElement} elem
- * @param {Number} index
- */
- export const setCursorPosition = function(elem, index) {
-     var val = elem.value
-     var len = val.length
-
-     // 超过文本长度直接返回
-     if (len < index) return
-     setTimeout(function() {
-         elem.focus()
-         if (elem.setSelectionRange) { // 标准浏览器
-             elem.setSelectionRange(index, index)   
-         } else { // IE9-
-             var range = elem.createTextRange()
-             range.moveStart("character", -len)
-             range.moveEnd("character", -len)
-             range.moveStart("character", index)
-             range.moveEnd("character", 0)
-             range.select()
-         }
-     }, 10)
- }
-
-export default {
-  docElement,
-  docBody,
-  viewPortWidth
 }
