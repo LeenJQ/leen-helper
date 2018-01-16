@@ -52,6 +52,14 @@ export const getElementStyleObj = function(element) {
 /**
  * 简单的html模版函数
  * html 字符串转换成 DOM 对象
+ * 
+ * @param {String} tplStr - 模版字符串
+ * 
+ * @return {Object}
+ * @return {DomFramgment} frag - Fragment 对象
+ * @return {Element} el - DOM 对象
+ * @return {Function} insert - 把Fragment 插入到指定的 DOM 对象里
+ *    如果元素只有一个则直接插入，否走用 DIV 包装再插入
  */
 export const tpl = function(tplStr) {
   let frag = document.createDocumentFragment(),
