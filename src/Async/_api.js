@@ -1,3 +1,9 @@
+/**
+ * !!!
+ * 这段代码只是用来保存业务相关的代码
+ * 仅供参考
+ */
+
 import {Observable} from 'rx'
 import config       from './config'
 

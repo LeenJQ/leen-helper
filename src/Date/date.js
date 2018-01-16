@@ -1,7 +1,13 @@
-const week = (date) => ("周" + "日一二三四五六".split("")[date.getDay()])
+export const week = (date) => ("周" + "日一二三四五六".split("")[date.getDay()])
 
-// 请用 2017/01/01 这种格式， 不要使用 2017-01-01，这会在 IOS 出错
-function formate (date, fmt) { //author: meizz
+// 
+/**
+ * 
+ * @param {Date} date - 时间戳，如 new Date('2017/01/01'), 
+ * !!! 请用 2017/01/01 这种格式， 不要使用 2017-01-01，这会在 IOS 出错
+ * @param {*} fmt - 格式如 yyyy-MM-dd hh:mm:ss
+ */
+export function formate (date=new Date(), fmt="yyyy/MM/dd hh:mm:ss") { //author: meizz
     var o = {
         "M+": date.getMonth() + 1, //月份
         "d+": date.getDate(), //日
@@ -15,11 +21,4 @@ function formate (date, fmt) { //author: meizz
     for (var k in o)
     if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return fmt;
-}
-
-export {week, formate}
-export default {
-  name: 'Date lib',
-  week: week,
-  formate: formate
 }
