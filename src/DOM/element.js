@@ -54,9 +54,28 @@ export const getElementStyleObj = function(element) {
  * html 字符串转换成 DOM 对象
  */
 export const tpl = function(tplStr) {
-  let df = document.createDocumentFragment()
-  let div = document.createElement('DIV')
+  let frag = document.createDocumentFragment(),
+    div = document.createElement('DIV'),
+    nodes,
+    el;
+
   div.innerHTML = tplStr
-  df.append(div)
-  return df
+  nodes = div.children
+
+  if(nodes.length > 1) {
+    el = div    
+    frag.appendChild(div)
+  } else {
+    el = div.children[0]
+    frag.appendChild(el)
+  }
+
+  return {
+    frag,
+    el,
+    insert(parent) {
+      parent.appendChild(frag)
+      return el
+    }
+  }
 }

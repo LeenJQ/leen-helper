@@ -1,8 +1,8 @@
 {
   "name": "leen-helper",
-  "version": "0.0.29",
+  "version": "0.0.59",
   "description": "开发自己的帮助函数库，不依赖第三方库",
-  "main": "dist/index.js",
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
