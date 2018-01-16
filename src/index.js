@@ -1,8 +1,8 @@
-import DOM from './DOM'
-import Date from './Date'
+import hDOM from './DOM'
+import hDate from './Date'
 
-export {DOM, Date}
+export {hDOM, hDate}
 
 export default {
-  DOM, Date
+  hDOM, hDate
 }

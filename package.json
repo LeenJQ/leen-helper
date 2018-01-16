@@ -1,6 +1,6 @@
 {
   "name": "leen-helper",
-  "version": "0.0.61",
+  "version": "0.0.62",
   "description": "开发自己的帮助函数库，不依赖第三方库",
   "main": "./src/index.js",
   "scripts": {
