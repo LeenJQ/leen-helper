@@ -29,7 +29,7 @@ export function noClass() {
   let none = true
 
   for(let checkClass of args) {
-    if( _classMatch(className, wantClass) ) {
+    if( _classMatch(className, checkClass) ) {
       none = false
       break;
     }

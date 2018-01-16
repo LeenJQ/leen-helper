@@ -36,14 +36,27 @@ export const getViewPortSize = ()=>{{
 }} 
 
 /**
- * DOM 属性函数
+ * DOM 元素
  */
+
+// 获取 DOM 元素原始类型
+export const getElementType = function(element) {
+  return Object.prototype.toString.call(element).slice(8, -1)
+}
+
 // 获取 DOM 元素的 CSS 样式规则对象
 export const getElementStyleObj = function(element) {
   return document.defaultView.getComputedStyle(element, null)
 }
 
-// 获取 DOM 元素原始类型
-export const getElementType = function(element) {
-  return Object.prototype.toString.call(element).slice(8, -1)
+/**
+ * 简单的html模版函数
+ * html 字符串转换成 DOM 对象
+ */
+export const tpl = function(tplStr) {
+  let df = document.createDocumentFragment()
+  let div = document.createElement('DIV')
+  div.innerHTML = tplStr
+  df.append(div)
+  return df
 }
