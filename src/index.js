@@ -1,5 +1,5 @@
-import DOM from './src/DOM'
-import Date from './src/Date'
+import DOM from './DOM'
+import Date from './Date'
 
 export {DOM, Date}
 
